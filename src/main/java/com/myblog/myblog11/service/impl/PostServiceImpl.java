@@ -1,6 +1,7 @@
 package com.myblog.myblog11.service.impl;
 
 import com.myblog.myblog11.entity.Post;
+import com.myblog.myblog11.exception.ResourceNotFoundException;
 import com.myblog.myblog11.payload.PostDto;
 import com.myblog.myblog11.repository.PostRepository;
 import com.myblog.myblog11.service.PostService;
@@ -17,11 +18,12 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public PostDto createPost(PostDto postDto) {
-        Post post= new Post();
+        Post post = new Post();
         post.setId(postDto.getId());
         post.setTitle(postDto.getTitle());
         post.setDescription(postDto.getDescription());
         post.setContent(postDto.getContent());
+
         Post savedPost = postRepository.save(post);
 
         PostDto dto = new PostDto();
@@ -32,4 +34,20 @@ public class PostServiceImpl implements PostService {
 
         return dto;
     }
+
+    @Override
+    public PostDto getPostById(long id) {
+        Post post = postRepository.findById(id).orElseThrow(
+                ()->new ResourceNotFoundException("Post Not found with id:"+id));
+
+        PostDto dto = new PostDto();
+        dto.setId(post.getId());
+        dto.setTitle(post.getTitle());
+        dto.setDescription(post.getDescription());
+        dto.setContent(post.getContent());
+
+        return dto;
+    }
+
+
 }
