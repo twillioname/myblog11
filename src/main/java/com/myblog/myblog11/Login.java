@@ -1,17 +1,17 @@
 package com.myblog.myblog11;
 
-public class LoginDto {
+public class Login {
 
     private String userName;
 
     private String password;
 
-    public void setUserName(String userName) {
+    public Login(String userName , String password) {
         this.userName = userName;
-    }
-    public void setPassword(String password) {
         this.password = password;
+
     }
+
     public String getUserName() {
         return userName;
     }
@@ -19,7 +19,6 @@ public class LoginDto {
     public String getPassword() {
         return password;
     }
-
 }
 
 

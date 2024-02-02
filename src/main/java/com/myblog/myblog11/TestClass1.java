@@ -3,7 +3,6 @@ package com.myblog.myblog11;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class TestClass1 {
@@ -81,6 +80,23 @@ public class TestClass1 {
 //        Integer y = x.get();
 //        System.out.println(y);
 
+//        List<Login> logins = Arrays.asList(
+//                new Login("mike", "testing"),
+//                new Login("stallin", "testing"),
+//                new Login("adam", "testing")
+//        );
+//       // System.out.println(logins);
+//
+//        List<LoginDto>dtos = logins.stream().map(login -> mapToDto(login)).collect(Collectors.toList());
+//        System.out.println(dtos);
+//    }
+//    static LoginDto mapToDto(Login login){
+//
+//        LoginDto dto = new LoginDto();
+//        dto.setUserName(login.getUserName());
+//        dto.setPassword(login.getPassword());
+//        return dto;
+//    }
 
 //        List<Employee> employees = Arrays.asList(
 //
@@ -109,7 +125,7 @@ public class TestClass1 {
 //
 //                new Employee("mike", 30, "chennai"),
 //                new Employee("stallin", 25, "chennai"),
-//                new Employee("adam", 34, "pune"),
+//                new Employee("adam", 31 , "pune"),
 //                new Employee("sam", 34, "Patna")
 //        );
 //
@@ -124,7 +140,7 @@ public class TestClass1 {
 //                new Employee("adam", 34, "pune"),
 //                new Employee("sam", 34, "Patna")
 //        );
-//
+//w
 //        Map<Integer, List<Employee>> collect = employees.stream().collect(Collectors.groupingBy(e -> e.getAge()));
 //        System.out.println(collect);
 
@@ -168,27 +184,27 @@ public class TestClass1 {
 //                System.out.println(e.getCity());
 //            }
 //        }
-//        List<Employee> employees = Arrays.asList(
-//
-//                new Employee("mike", 30, "chennai"),
-//                new Employee("stallin", 25, "chennai"),
-//                new Employee("adam", 34, "pune"),
-//                new Employee("sam", 34, "Patna")
-//        );
-//
-//        Map<String, List<Employee>> collect = employees.stream().collect(Collectors.groupingBy(e -> e.getCity()));
-//
-//        for (Map.Entry<String,List<Employee>> entry :collect.entrySet()){
-//            String City  = entry.getKey();
-//            List<Employee> employeesWithAge = entry.getValue();
-//            System.out.println("City:"+City+"----");
-//
-//            for (Employee e: employeesWithAge){
-//                System.out.println(e.getName());
-//                System.out.println(e.getCity());
-//            }
-//        }
+        List<Employee> employees = Arrays.asList(
 
+                new Employee("mike", 30, "chennai"),
+                new Employee("stallin", 25, "chennai"),
+                new Employee("adam", 34, "pune"),
+                new Employee("sam", 34, "Patna")
+        );
+
+        Map<String, List<Employee>> collect = employees.stream().collect(Collectors.groupingBy(e -> e.getCity()));
+
+        for (Map.Entry<String,List<Employee>> entry :collect.entrySet()){
+            String City  = entry.getKey();
+            List<Employee> employeesWithAge = entry.getValue();
+            System.out.println("City:"+City+"----");
+
+            for (Employee e: employeesWithAge){
+                System.out.println(e.getName());
+                System.out.println(e.getCity());
+            }
+        }
 
     }
-}
+    }
+

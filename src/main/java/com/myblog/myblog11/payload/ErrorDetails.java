@@ -10,8 +10,8 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 public class ErrorDetails {
-    private String message;
 
+    private String message;
     private Date date;
     private String uri;
 
