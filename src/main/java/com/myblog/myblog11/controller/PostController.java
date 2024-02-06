@@ -16,8 +16,9 @@ public class PostController {
     private PostService postService;
 
     public PostController(PostService postService) {
-        this.postService = postService;
-    }
+        this.postService = postService;}
+
+  //  @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<PostDto>createPost(@RequestBody PostDto postDto){
         PostDto dto = postService.createPost(postDto);
