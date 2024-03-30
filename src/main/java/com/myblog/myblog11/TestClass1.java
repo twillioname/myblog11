@@ -27,6 +27,7 @@ public class TestClass1 {
 //        List<String> data = number.stream().filter(s -> s.startsWith("m") ).collect(Collectors.toList());
 //        System.out.println(data);
 
+
 //        List<String> number = Arrays.asList("mike", "adam","mike","stallin");
 //        List<String> data1 = number.stream().filter(s -> s.startsWith("a") ).collect(Collectors.toList());
 //        List<String> data2 = number.stream().filter(s -> s.equals("mike") ).collect(Collectors.toList());
